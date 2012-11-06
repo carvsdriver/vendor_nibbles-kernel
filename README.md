@@ -4,6 +4,6 @@ $(call inherit-product, vendor/lz-msm8660-common/lightningzap.mk)
 
 Place the following in your manifest:
 
-  <project name=" TeamFahQ/vendor_lz-msm8660-common" path="vendor/lz-msm8660-common" remote="LZkernel" revision="master" />
+"<project name=" TeamFahQ/vendor_lz-msm8660-common" path="vendor/lz-msm8660-common" remote="LZkernel" revision="master" />"
 
 Ensure you have the msm8660 Lightning Zap kernel!
