@@ -1,0 +1,61 @@
+#!/system/bin/sh
+#Battery Tweaks
+#To select a tweak, remove the "#" before the setting
+#Optimal values for up_threshold is 45-95. Higher number=higher battery/lower performance. Lower number=higher performance/lower battery life
+
+mount -o remount rw /system
+mount -o remount rw /sys
+
+echo "Setting permissions for user level tweaking"
+chmod -R 666 /sys/devices/system/cpu/cpufreq/ondemand/;
+
+#=========
+#OnDemand. Uncomment to make active.
+#=========
+AWAKE_GOVERNOR="ondemand"
+#SLEEP_GOVERNOR="ondemand"
+	#echo "45" > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold;
+#===================================
+#0=off  1=on. Uncomment to make active.
+#===================================	
+	#echo "1" > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias;
+	#echo "1" > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy;
+	echo "1" > /sys/devices/system/cpu/cpufreq/ondemand/down_differential;
+	#echo "1" > /sys/devices/system/cpu/cpufreq/ondemand/ignore_nice_load;
+	
+#===================================
+#Be cautious when changing sampling_rate values
+#===================================
+	echo "77500" > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate;
+
+#==========
+#PowerSaver
+#==========
+#AWAKE_GOVERNOR="powersaver"
+#		echo "85" > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/up_threshold;
+#		echo "85" > /sys/devices/system/cpu/cpu/cpufreq/ondemand/up_threshold;
+#===================================
+#0=off  1=on
+#===================================
+#		echo "1" > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/powersave_bias;
+#		echo "1" > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias;
+#		echo "1" > /sys/devices/system/cpu/cpu/cpufreq/ondemand/io_is_busy;
+#===================================
+#Do not change smapling_rate values
+#===================================
+#		echo "30000" > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/sampling_rate;
+#		echo "30000" > /sys/devices/system/cpu/cpu/cpufreq/ondemand/sampling_rate;
+
+#=============================================================================
+#Powersave [no additional settings required, powersave only stays at 100 MHz]
+#Best Sleep Governor
+#=============================================================================
+SLEEP_GOVERNOR="powersave";
+
+echo "Setting Awake Governor";
+echo "Setting Sleep Governor";
+echo "Setting up_threshold";
+echo "Setting powersave_bias";
+echo "Setting io_is_busy";
+sleep 1
+echo "Done"
