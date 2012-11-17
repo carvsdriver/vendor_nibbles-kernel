@@ -13,6 +13,9 @@ PRODUCT_COPY_FILES += \
     vendor/lz-msm8660-common/scripts/etc/init.d/11sysctltweaks:system/etc/init.d/11sysctltweaks \
     vendor/lz-msm8660-common/scripts/etc/init.d/12complete:system/etc/init.d/12complete \
 
+# Root Browser Lite
+PRODUCT_COPY_FILES += \
+    vendor/lz-msm8660-common/apps/RootBrowser.apk:system/app \
 # sysctl.conf
 PRODUCT_COPY_FILES += \
      vendor/lz-msm8660-common/scripts/etc/sysctl.conf:system/etc/sysctl.conf \
