@@ -1,4 +1,4 @@
-#This is intended to automatically add Lightning Zap scripts to your build for the msm8660-common board
+#This is intended to automatically add Lightning Zap scripts to your build 
 #This eliminates the steps of adding the init.d scripts and sysctl.conf to your already built .zip then regenerating a new md4sum
 #Team Fah-Q! thanks you for your support
 
