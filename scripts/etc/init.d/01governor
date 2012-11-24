@@ -6,11 +6,8 @@
 mount -o remount rw /system
 mount -o remount rw /sys
 
-echo "Setting permissions for user level tweaking"
-chmod -R 666 /sys/devices/system/cpu/cpufreq/ondemand/;
-
 #=========
-#OnDemand. Uncomment to make active.
+#OnDemand. 
 #=========
 AWAKE_GOVERNOR="ondemand"
 #SLEEP_GOVERNOR="ondemand"

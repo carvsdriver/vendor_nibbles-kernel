@@ -4,22 +4,23 @@
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/lz-msm8660-common/scripts/etc/init.d/0remount:system/etc/init.d/0remount \
-    vendor/lz-msm8660-common/scripts/etc/init.d/01governor:system/etc/init.d/01governor \
-    vendor/lz-msm8660-common/scripts/etc/init.d/03systweak:system/etc/init.d/03systweak \
-    vendor/lz-msm8660-common/scripts/etc/init.d/04makesysappsrw:system/etc/init.d/0makesysappsrw \
-    vendor/lz-msm8660-common/scripts/etc/init.d/07vaccum_sqlite:system/etc/init.d/07vaccum_sqlite \
-    vendor/lz-msm8660-common/scripts/etc/init.d/10zipalign:system/etc/init.d/10zipalign \
-    vendor/lz-msm8660-common/scripts/etc/init.d/11sysctltweaks:system/etc/init.d/11sysctltweaks \
-    vendor/lz-msm8660-common/scripts/etc/init.d/12complete:system/etc/init.d/12complete \
+    vendor/lz-kernel/scripts/etc/init.d/0remount:system/etc/init.d/0remount \
+    vendor/lz-kernelon/scripts/etc/init.d/01governor:system/etc/init.d/01governor \
+    vendor/lz-kernel/scripts/etc/init.d/03systweak:system/etc/init.d/03systweak \
+    vendor/lz-kernel/scripts/etc/init.d/04makesysappsrw:system/etc/init.d/0makesysappsrw \
+    vendor/lz-kernel/scripts/etc/init.d/07vaccum_sqlite:system/etc/init.d/07vaccum_sqlite \
+    vendor/lz-kernel/scripts/etc/init.d/09buildpropext:system/etc/init.d/09buildpropext \
+    vendor/lz-kernel/scripts/etc/init.d/10zipalign:system/etc/init.d/10zipalign \
+    vendor/lz-kernel/scripts/etc/init.d/11sysctltweaks:system/etc/init.d/11sysctltweaks \
+    vendor/lz-kernel/scripts/etc/init.d/12complete:system/etc/init.d/12complete \
 
 # Root Browser Lite
 PRODUCT_COPY_FILES += \
-    vendor/lz-msm8660-common/apps/RootBrowser.apk:system/app \
+    vendor/lz-kernel/apps/RootBrowser.apk:system/app \
 # sysctl.conf
 PRODUCT_COPY_FILES += \
-     vendor/lz-msm8660-common/scripts/etc/sysctl.conf:system/etc/sysctl.conf \
+     vendor/lz-kernel/scripts/etc/sysctl.conf:system/etc/sysctl.conf \
 
 # zipalign binary
 PRODUCT_COPY_FILES += \
-     vendor/lz-msm8660-common/binary/xbin/zipalign:system/xbin/zipalign \
+     vendor/lz-kernel/binary/xbin/zipalign:system/xbin/zipalign \
