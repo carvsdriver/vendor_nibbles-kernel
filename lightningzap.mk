@@ -5,7 +5,7 @@
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/lz-kernel/scripts/etc/init.d/0remount:system/etc/init.d/0remount \
-    vendor/lz-kernelon/scripts/etc/init.d/01governor:system/etc/init.d/01governor \
+    vendor/lz-kernel/scripts/etc/init.d/01governor:system/etc/init.d/01governor \
     vendor/lz-kernel/scripts/etc/init.d/03systweak:system/etc/init.d/03systweak \
     vendor/lz-kernel/scripts/etc/init.d/04makesysappsrw:system/etc/init.d/0makesysappsrw \
     vendor/lz-kernel/scripts/etc/init.d/07vaccum_sqlite:system/etc/init.d/07vaccum_sqlite \
