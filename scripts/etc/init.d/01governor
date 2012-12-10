@@ -25,24 +25,6 @@ AWAKE_GOVERNOR="ondemand"
 #===================================
 	echo "77500" > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate;
 
-#==========
-#PowerSaver
-#==========
-#AWAKE_GOVERNOR="powersaver"
-#		echo "85" > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/up_threshold;
-#		echo "85" > /sys/devices/system/cpu/cpu/cpufreq/ondemand/up_threshold;
-#===================================
-#0=off  1=on
-#===================================
-#		echo "1" > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/powersave_bias;
-#		echo "1" > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias;
-#		echo "1" > /sys/devices/system/cpu/cpu/cpufreq/ondemand/io_is_busy;
-#===================================
-#Do not change smapling_rate values
-#===================================
-#		echo "30000" > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/sampling_rate;
-#		echo "30000" > /sys/devices/system/cpu/cpu/cpufreq/ondemand/sampling_rate;
-
 #=============================================================================
 #Powersave [no additional settings required, powersave only stays at 100 MHz]
 #Best Sleep Governor
