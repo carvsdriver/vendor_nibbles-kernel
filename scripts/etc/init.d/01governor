@@ -21,9 +21,9 @@ AWAKE_GOVERNOR="ondemand"
 	#echo "1" > /sys/devices/system/cpu/cpufreq/ondemand/ignore_nice_load;
 	
 #===================================
-#Be cautious when changing sampling_rate values
+#Be cautious when changing sampling_rate values as too high/low can cause lag
 #===================================
-	echo "77500" > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate;
+	echo "50000" > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate;
 
 #=============================================================================
 #Powersave [no additional settings required, powersave only stays at 100 MHz]
