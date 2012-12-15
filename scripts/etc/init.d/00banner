@@ -1,0 +1,7 @@
+#!/system/bin/sh
+#
+# Print startup info
+#
+
+echo "Starting CvD-Nibbles ... CM10.";
+

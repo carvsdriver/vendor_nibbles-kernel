@@ -1,0 +1,7 @@
+#!/system/bin/sh
+
+echo "Starting 19minfree.";
+
+echo "6400,8960,14080,17920,38400,64000" > /sys/module/lowmemorykiller/parameters/minfree
+
+echo "Done 19minfree.";

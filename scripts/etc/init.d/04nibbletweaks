@@ -1,0 +1,138 @@
+#!/system/bin/sh
+# Various Tweaks by Kobridge v1.0
+#
+# Cleaned up and fixed by CvD
+#
+# Memory Management
+echo "Starting 02nibblestweaks"
+
+READ_AHEAD_KB="2048"
+
+if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ]; then
+    echo $READ_AHEAD_KB > /sys/devices/virtual/bdi/179:0/read_ahead_kb
+fi
+if [ -e /sys/devices/virtual/bdi/179:8/read_ahead_kb ]; then
+    echo $READ_AHEAD_KB > /sys/devices/virtual/bdi/179:8/read_ahead_kb
+fi
+if [ -e /sys/devices/virtual/bdi/179:16/read_ahead_kb ]; then
+    echo $READ_AHEAD_KB > /sys/devices/virtual/bdi/179:16/read_ahead_kb
+fi
+if [ -e /sys/devices/virtual/bdi/179:24/read_ahead_kb ]; then
+    echo $READ_AHEAD_KB > /sys/devices/virtual/bdi/179:24/read_ahead_kb
+fi
+
+if [ -e /proc/sys/kernel/sched_min_granularity_ns ]; then
+    echo "200000" > /proc/sys/kernel/sched_min_granularity_ns
+fi
+
+# Network Speed
+if [ -e /proc/sys/net/ipv4/tcp_timestamps ]; then
+	echo "0" > /proc/sys/net/ipv4/tcp_timestamps
+fi
+if [ -e /proc/sys/net/ipv4/tcp_tw_reuse ]; then
+	echo "1" > /proc/sys/net/ipv4/tcp_tw_reuse
+fi
+if [ -e /proc/sys/net/ipv4/tcp_sack ]; then
+	echo "1" > /proc/sys/net/ipv4/tcp_sack
+fi
+if [ -e /proc/sys/net/ipv4/tcp_tw_recycle ]; then
+echo "1" > /proc/sys/net/ipv4/tcp_tw_recycle
+fi
+if [ -e /proc/sys/net/ipv4/tcp_window_scaling ]; then
+echo "1" > /proc/sys/net/ipv4/tcp_window_scaling
+fi
+if [ -e /proc/sys/net/ipv4/tcp_no_metrics_save ]; then
+echo "1" > /proc/sys/net/ipv4/tcp_no_metrics_save
+fi
+if [ -e /proc/sys/net/ipv4/tcp_keepalive_probes ]; then
+echo "5" > /proc/sys/net/ipv4/tcp_keepalive_probes
+fi
+if [ -e /proc/sys/net/ipv4/tcp_keepalive_intvl ]; then
+echo "20" > /proc/sys/net/ipv4/tcp_keepalive_intvl
+fi
+if [ -e /proc/sys/net/ipv4/tcp_fin_timeout ]; then
+echo "30" > /proc/sys/net/ipv4/tcp_fin_timeout
+fi
+if [ -e /proc/sys/net/core/wmem_max ]; then
+echo "404480" > /proc/sys/net/core/wmem_max
+fi
+if [ -e /proc/sys/net/core/rmem_max ]; then
+echo "404480" > /proc/sys/net/core/rmem_max
+fi
+if [ -e /proc/sys/net/core/rmem_default ]; then
+echo "256960" > /proc/sys/net/core/rmem_default
+fi
+if [ -e /proc/sys/net/core/wmem_default ]; then
+echo "256960" > /proc/sys/net/core/wmem_default
+fi
+if [ -e /proc/sys/net/ipv4/tcp_wmem ]; then
+echo "4096,16384,404480" > /proc/sys/net/ipv4/tcp_wmem
+fi
+if [ -e /proc/sys/net/ipv4/tcp_rmem ]; then
+echo "4096,87380,404480" > /proc/sys/net/ipv4/tcp_rmem
+fi
+
+# VM Management
+if [ -e /proc/sys/vm/oom_kill_allocating_task ]; then
+echo "0" > /proc/sys/vm/oom_kill_allocating_task
+fi
+if [ -e /proc/sys/vm/panic_on_oom ]; then
+echo "0" > /proc/sys/vm/panic_on_oom
+fi
+if [ -e /proc/sys/vm/laptop_mode ]; then
+echo "0" > /proc/sys/vm/laptop_mode
+fi
+if [ -e /proc/sys/vm/block_dump ]; then
+echo "0" > /proc/sys/vm/block_dump
+fi
+if [ -e /proc/sys/vm/overcommit_memory ]; then
+echo "1" > /proc/sys/vm/overcommit_memory
+fi
+if [ -e /proc/sys/vm/page-cluster ]; then
+echo "5" > /proc/sys/vm/page-cluster
+fi
+if [ -e /proc/sys/vm/swappiness ]; then
+echo "10" > /proc/sys/vm/swappiness
+fi
+if [ -e/proc/sys/vm/vfs_cache_pressure ]; then
+echo "50" > /proc/sys/vm/vfs_cache_pressure
+fi
+if [ -e /proc/sys/vm/dirty_background_ratio ]; then
+echo "60" > /proc/sys/vm/dirty_background_ratio
+fi
+if [ -e /proc/sys/vm/dirty_expire_centisecs ]; then
+echo "500" > /proc/sys/vm/dirty_expire_centisecs
+fi
+if [ -e /proc/sys/vm/dirty_writeback_centisecs ]; then
+echo "1000" > /proc/sys/vm/dirty_writeback_centisecs
+fi
+
+if [ -e /proc/sys/vm/dirty_ratio ]; then
+echo "95" > /proc/sys/vm/dirty_ratio
+fi
+if [ -e /proc/sys/vm/min_free_kbytes ]; then
+echo "4096" > /proc/sys/vm/min_free_kbytes
+fi
+
+# Kernel
+if [ -e /proc/sys/kernel/panic ]; then
+echo "30" > /proc/sys/kernel/panic
+fi
+if [ -e /proc/sys/kernel/panic_on_oops ]; then
+echo "1" > /proc/sys/kernel/panic_on_oops
+fi
+if [ -e /proc/sys/kernel/msgmni ]; then
+echo "64000" > /proc/sys/kernel/msgmni
+fi
+if [ -e /proc/sys/kernel/msgmax ]; then
+echo "64000" > /proc/sys/kernel/msgmax
+fi
+if [ -e /proc/sys/fs/lease-break-time ]; then
+echo "10" > /proc/sys/fs/lease-break-time
+fi
+if [ -e /proc/sys/kernel/sem ]; then
+echo "500,512000,64,2048" > /proc/sys/kernel/sem
+fi
+
+echo "Done 02nibblestweaks"
+

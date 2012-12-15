@@ -20,9 +20,9 @@ if ! test -f $LOG_FILE; then
 	fi;
     	
 echo "Starting Sqlite Vacuum $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
-sleep 5;
+
 echo "Cleaning /data partition";
-sleep 5;
+
 	for i in \
 	`find /data -iname "*.db"`
 	do \
@@ -30,9 +30,9 @@ sleep 5;
 		/system/xbin/sqlite3 $i 'REINDEX;'; 		
 		echo Vacuum $i  | tee -a $LOG_FILE;
 	done;
-sleep 5;
+
 echo "Cleaning /dbdata partition";
-sleep 5;
+
 	for i in \
 	`find /dbdata -iname "*.db"`
 	do \
@@ -40,9 +40,9 @@ sleep 5;
 		/system/xbin/sqlite3 $i 'REINDEX;';  
 		echo Vacuum $i  | tee -a $LOG_FILE;
 	done;
-sleep 5;
+
 echo "Cleaning /sdcard partition";
-sleep 5;
+
 	for i in \
 	`find /sdcard -iname "*.db"`
 	do \

@@ -6,12 +6,38 @@
 mount -o remount rw /system
 mount -o remount rw /sys
 
+# Start tweak by car vs driver @ xda-developers
+#
+# force the governor into ondemand to apply additional CPU tweaks
+echo "Setting Awake Governor";
+GOVERNOR=`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor`;
+
+if [ $GOVERNOR != "ondemand" ] 
+then
+	#
+	# comment out the below line if you don't want to force ondemand
+	# the remainder of the script will fail when another governor is set
+	echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor;
+	# this script is specific to the ondemand governor, so if you commented
+	# out the line above then you will need to uncomment the below line
+	#exit 1;
+	sleep 1;
+	GOVERNOR=`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor`;
+	echo "Governor set to $GOVERNOR";
+fi;
+
+#
+#
+# End tweak
+#
+
 #=========
 #OnDemand. 
 #=========
 AWAKE_GOVERNOR="ondemand"
 #SLEEP_GOVERNOR="ondemand"
-	#echo "45" > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold;
+echo "Setting up_threshold";
+echo "45" > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold;
 #===================================
 #0=off  1=on. Uncomment to make active.
 #===================================	
@@ -29,12 +55,7 @@ AWAKE_GOVERNOR="ondemand"
 #Powersave [no additional settings required, powersave only stays at 100 MHz]
 #Best Sleep Governor
 #=============================================================================
+echo "Setting Sleep Governor";
 SLEEP_GOVERNOR="powersave";
 
-echo "Setting Awake Governor";
-echo "Setting Sleep Governor";
-echo "Setting up_threshold";
-echo "Setting powersave_bias";
-echo "Setting io_is_busy";
-sleep 1
 echo "Done"
