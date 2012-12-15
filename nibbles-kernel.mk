@@ -10,7 +10,7 @@ PRODUCT_COPY_FILES += \
     vendor/nibbles-kernel/scripts/etc/init.d/01remount:system/etc/init.d/01remount \
     vendor/nibbles-kernel/scripts/etc/init.d/02governor:system/etc/init.d/02governor \
     vendor/nibbles-kernel/scripts/etc/init.d/03systweak:system/etc/init.d/03systweak \
-    vendor/nubbles-kernel/scripts/etc/init.d/04nibbletweaks:system/etc/init.d/04nibbletweaks \
+    vendor/nibbles-kernel/scripts/etc/init.d/04nibbletweaks:system/etc/init.d/04nibbletweaks \
     vendor/nibbles-kernel/scripts/etc/init.d/05makesysappsrw:system/etc/init.d/05makesysappsrw \
     vendor/nibbles-kernel/scripts/etc/init.d/07vaccum_sqlite:system/etc/init.d/07vaccum_sqlite \
     vendor/nibbles-kernel/scripts/etc/init.d/10zipalign:system/etc/init.d/10zipalign \
