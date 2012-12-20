@@ -1,0 +1,59 @@
+#!/system/bin/sh
+#
+# GPU Governors for the Nibbles Kernel by car vs driver @ XDA
+#
+#
+# To enable a specifig governor, change the value of GOVERNOR to one of the following settings.
+# Anything other than the stock GPU setting will cause additional battery drain.
+#
+# 1 - Stock GPU Clocks 2D@200MHz, 3D@266MHz
+# 2 - Moderate overclock 2D@228MHz, 3D@300MHz
+# 3 - Maxed out 2D@266MHz, 3D@320MHz  (may cause *some* instability)
+#
+
+
+GOVERNOR="1";
+
+#
+# Do not change anything below this line.  Altering the frequencies below manually can 
+# result in very bad things happening to your device.
+#
+
+mount -o remount rw /sys
+
+echo "Setting GPU governor.";
+
+
+if [ $GOVERNOR == "1" ] then
+	echo 266667000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl3d-0/max_gpuclk
+	echo 266667000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl3d-0/gpuclk
+
+	echo 200000000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl2d-0/max_gpuclk
+	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+
+	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/max_gpuclk
+	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+fi;
+
+if [ $GOVERNOR == "2" ] then
+	echo 300000000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl3d-0/gpuclk
+
+	echo 228571000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl2d-0/max_gpuclk
+	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+
+	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/max_gpuclk
+	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+fi;
+
+if [ $GOVERNOR == "3" ] then
+	echo 320000000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl3d-0/gpuclk
+
+	echo 266667000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl2d-0/max_gpuclk
+	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+
+	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/max_gpuclk
+	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+fi;
+
+echo "GPU governor set.";
+
