@@ -11,13 +11,13 @@ PRODUCT_COPY_FILES += \
     vendor/nibbles-kernel/scripts/etc/init.d/02governor:system/etc/init.d/02governor \
     vendor/nibbles-kernel/scripts/etc/init.d/03systweak:system/etc/init.d/03systweak \
     vendor/nibbles-kernel/scripts/etc/init.d/04nibbletweaks:system/etc/init.d/04nibbletweaks \
-    vendor/nibbles-kernel/scripts/etc/init.d/05makesysappsrw:system/etc/init.d/05makesysappsrw \
     vendor/nibbles-kernel/scripts/etc/init.d/07vaccum_sqlite:system/etc/init.d/07vaccum_sqlite \
     vendor/nibbles-kernel/scripts/etc/init.d/10zipalign:system/etc/init.d/10zipalign \
     vendor/nibbles-kernel/scripts/etc/init.d/11sysctltweaks:system/etc/init.d/11sysctltweaks \
     vendor/nibbles-kernel/scripts/etc/init.d/15sysctl_queue:system/etc/init.d/15sysctl_queue \
     vendor/nibbles-kernel/scripts/etc/init.d/19minfree:system/etc/init.d/19minfree \
     vendor/nibbles-kernel/scripts/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/nibbles-kernel/scripts/etc/init.d/98gpugovernor:system/etc/init.d/98gpugovernor \
     vendor/nibbles-kernel/scripts/etc/init.d/99complete:system/etc/init.d/99complete \
 
 #Additional script to ensure governor tweaks work right. Be sure to add perms of 777 in your flash script
