@@ -24,35 +24,35 @@ mount -o remount rw /sys
 echo "Setting GPU governor.";
 
 
-if [ $GOVERNOR == "1" ] then
-	echo 266667000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl3d-0/max_gpuclk
-	echo 266667000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl3d-0/gpuclk
+if [ $GOVERNOR == "1" ]; then
+	echo 266667000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk
+	echo 266667000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk
 
-	echo 200000000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl2d-0/max_gpuclk
-	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+	echo 200000000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl-2d0/max_gpuclk
+	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/gpuclk
 
-	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/max_gpuclk
-	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/max_gpuclk
+	echo 200000000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/gpuclk
 fi;
 
-if [ $GOVERNOR == "2" ] then
-	echo 300000000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl3d-0/gpuclk
+if [ $GOVERNOR == "2" ]; then
+	echo 300000000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk
 
-	echo 228571000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl2d-0/max_gpuclk
-	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+	echo 228571000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl-2d0/max_gpuclk
+	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/gpuclk
 
-	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/max_gpuclk
-	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/max_gpuclk
+	echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/gpuclk
 fi;
 
-if [ $GOVERNOR == "3" ] then
-	echo 320000000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl3d-0/gpuclk
+if [ $GOVERNOR == "3" ]; then
+	echo 320000000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk
 
-	echo 266667000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl2d-0/max_gpuclk
-	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+	echo 266667000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl-2d0/max_gpuclk
+	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/gpuclk
 
-	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/max_gpuclk
-	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl2d-1/gpuclk
+	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/max_gpuclk
+	echo 266667000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/gpuclk
 fi;
 
 echo "GPU governor set.";
