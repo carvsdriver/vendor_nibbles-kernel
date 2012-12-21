@@ -20,14 +20,6 @@ PRODUCT_COPY_FILES += \
     vendor/nibbles-kernel/scripts/etc/init.d/98gpugovernor:system/etc/init.d/98gpugovernor \
     vendor/nibbles-kernel/scripts/etc/init.d/99complete:system/etc/init.d/99complete \
 
-#Additional script to ensure governor tweaks work right. Be sure to add perms of 777 in your flash script
-PRODUCT_COPY_FILES += \
-    vendor/nibbles-kernel/scripts/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-
-# sysctl.conf
-PRODUCT_COPY_FILES += \
-     vendor/nibbles-kernel/scripts/etc/sysctl.conf:system/etc/sysctl.conf \
-
 # zipalign binary
 PRODUCT_COPY_FILES += \
      vendor/nibbles-kernel/binary/xbin/zipalign:system/xbin/zipalign \
