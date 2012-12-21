@@ -17,7 +17,6 @@ PRODUCT_COPY_FILES += \
     vendor/nibbles-kernel/scripts/etc/init.d/15sysctl_queue:system/etc/init.d/15sysctl_queue \
     vendor/nibbles-kernel/scripts/etc/init.d/19minfree:system/etc/init.d/19minfree \
     vendor/nibbles-kernel/scripts/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/nibbles-kernel/scripts/etc/init.d/98gpugovernor:system/etc/init.d/98gpugovernor \
     vendor/nibbles-kernel/scripts/etc/init.d/99complete:system/etc/init.d/99complete \
 
 # zipalign binary
